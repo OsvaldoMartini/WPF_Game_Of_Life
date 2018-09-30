@@ -2,13 +2,13 @@
 {
 	public struct Location
 	{
-		int _x;
+	    readonly int _x;
 		public int X { get { return _x; } }
 
-		int _y;
+	    readonly int _y;
 		public int Y { get { return _y; } }
 
-		bool _isValid;
+	    readonly bool _isValid;
 		public bool IsValid { get { return _isValid; } }
 
 		public Location(int x, int y, Dimensions dim)

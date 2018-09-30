@@ -13,16 +13,17 @@ namespace Binding.GameOfLife.Mart
 	public class LifeView : FrameworkElement	// public so Reflection/XAML works!
 	{
 		#region Fields
-		Pen _greyPen = new Pen(Brushes.Gray, 1);
 
-		Point _offset = new Point(0.0, 0.0);
+	    readonly Pen _greyPen = new Pen(Brushes.Gray, 1);
+
+        Point _offset = new Point(0.0, 0.0);
 		LifeModel _model;
 		Location _last;
 
-		List<Visual> _visuals = new List<Visual>();
-		DrawingVisual _gridVisual = new DrawingVisual();
-		DrawingVisual _cellsVisual = new DrawingVisual();
-		DrawingVisual _adornerVisual = new DrawingVisual();
+	    readonly List<Visual> _visuals = new List<Visual>();
+	    readonly DrawingVisual _gridVisual = new DrawingVisual();
+	    readonly DrawingVisual _cellsVisual = new DrawingVisual();
+	    readonly DrawingVisual _adornerVisual = new DrawingVisual();
 		#endregion
 		
 		#region Dependency properties
@@ -244,8 +245,9 @@ namespace Binding.GameOfLife.Mart
 
 		public bool Next()// returns true if changed
 		{
-			try
-			{
+
+            try
+            {
 				bool ret = _model.Next();
 				this.Generation++;
 				DrawModel();
@@ -257,7 +259,7 @@ namespace Binding.GameOfLife.Mart
 			}
 		}
 
-		public Location GetLocationFromPt(Point pt)
+	    public Location GetLocationFromPt(Point pt)
 		{
 			Thickness padding = this.Padding;
 			Dimensions dim = this.Dimensions;
